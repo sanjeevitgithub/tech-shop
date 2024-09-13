@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart shop</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+</head>
+<style>
+      body{
+            background-color: black;
+            height:100vh;
+        }
+       section img {
+          width:38px; 
+
+        } 
+        header{
+            display:grid;
+            grid-template-columns: repeat(2,1fr); 
+
+        } 
+        
+        .header-section-1{
+    
+            align-content:start; 
+            text-align:start; 
+            color:#828583;
+
+
+        }
+        .header-section-2{
+            align-content:end; 
+            text-align:end; 
+            
+
+            
+        } 
+        .heading-cart:hover{
+           margin:0px;
+           font-size:34px; 
+
+           font-weight:800px;
+           background-color: Red;
+           position:absolute;
+            
+
+
+        }
+        .button{
+            background-color: red; 
+            width:150px;
+            margin-top:22px;
+            height:28px;
+            border:none;
+            border-radius:4px;
+            color:whitesmoke;
+
+            
+
+        }
+        footer{
+            display:grid;
+            grid-template-columns: repeat(4,1fr); 
+            background-color: black; 
+            margin-top:22px;
+
+        
+
+        } 
+        .footer-section-1{
+            margin-left:28px;
+            color:#828583;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:18px;
+        } 
+        .footer-section-2 li{
+            padding-bottom:12px;
+            color:#828583;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:18px;
+        }
+        .footer-section-3 li{
+            padding-bottom:12px; 
+            color:#828583;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:18px;
+        }
+        .footer-section-4 li{
+            padding-bottom:12px; 
+            color:#828583;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size:18px;
+        }
+        .icon-display{
+            display:flex;
+            flex-direction:row;
+            margin-right:44px; 
+            justify-content:space-between;
+            margin-top:42px;  
+
+            
+
+        }
+        .icons i{ 
+            background-color: azure;
+            width:18px;
+            height:18px;
+            text-align:center;
+            align-content: center;
+            margin-right:32px;
+
+        
+        } 
+        .horizontal-tag{
+            color:gray;
+        } 
+        
+       
+        .product-image-container{
+            height:170px;
+            width:170px;
+            margin-left:28px;
+            margin-right:28px;
+
+        }
+        .product-container{ 
+            margin-top:42px;
+            height:500px;
+            width:900px;  
+            background-color:rgb(16, 15, 15);
+            display:flex;
+            flex-direction:column;
+            margin-right:52px;
+            overflow-y:scroll;
+            scrollbar-color:rgb(58, 55, 55) rgb(58, 55, 55);
+
+        } 
+        .product-section{
+             display:grid;
+             grid-template-columns:repeat(2,1fr);
+            
+        }
+
+        .product-image{
+            margin-top:28px;
+        }
+
+        .sub-product{ 
+            display:flex;
+            grid-template-columns:repeat(3,1fr);
+
+
+
+        }
+        .signs{
+          display:flex;
+          flex-direction:row;
+            
+        }
+    
+     .minus-container{ 
+            width:32px;
+            height:32px;
+            background-color: rgb(74, 75, 77);
+            text-align: center;
+            align-content:center;
+            border:1px solid rgb(64, 62, 62);
+            color:rgb(188, 180, 180);
+            font-weight:2000px; 
+        
+        } 
+        .count-container{
+            width:32px;
+            height:32px;
+            background-color: rgb(8, 9, 11);
+            text-align: center;
+            align-content:center;
+            font-weight:2000px;
+    
+            color:red;
+        
+
+    
+        }
+        .plus-container{
+            width:32px;
+            height:32px;
+            background-color: rgb(74, 75, 77);
+            text-align: center;
+            align-content:center;
+            border:1px solid rgb(64, 62, 62);
+            color:rgb(188, 180, 180);
+
+
+        
+        }    
+        .trash-container{
+            position:relative; 
+            width:50px;
+            height:50px;
+            margin-left:800px;
+            margin-bottom:24px;
+            bottom:130px;
+        
+            align-content:center; 
+            text-align:center;
+            right:200px;
+            background-color:grey;
+            
+            
+
+
+
+
+        }
+        .product-section-2{
+            display:flex;
+            flex-direction:row; 
+            margin-top:42px;
+            color:white;
+            margin-left:22px;
+        
+        } 
+        .total-price{
+            display:flex;
+            flex-direction:row;
+            margin-right:52px;
+            color:white; 
+            margin-left:68px;
+        }
+        .price-button{
+            background-color: red;
+            width:252px;
+            height:38px;
+            color:whitesmoke;
+            margin-left:68px;
+            font-size:14px; 
+        }
+       .sub-product h1{
+         margin-left:12px;
+         color:rgb(118, 118, 117);
+         font-size:22px;
+         
+
+       } 
+
+       .sub-product p{ 
+        font-size:34px; 
+        margin-left:12px;
+        color:rgb(188, 180, 180); 
+        font-weight:600;
+
+       }
+       .minus-container p{
+            margin-top:2px;
+            font-size:32px;
+            
+       }
+       .plus-container p{  
+            margin-top:2px;
+            font-size:32px;
+            padding-right:4px;
+
+       }
+       .count-container p{
+           margin-top:4px;
+           color:red;
+           font-size:22px;
+       }
+</style>
+<body>
+     <header>
+        <section class = "header-section-1">
+              <h1 class = "heading-cart">Tech Shop</h1> 
+
+
+        </section>
+        <section class = "header-section-2" >
+            
+            <img style = "margin-right:52px; width:26px;" class = "search"src = "./icons/search.jpg.png"  
+            
+            />
+            <img  style = "margin-right:52px; width:26px;"class = "cart"src=  "./icons/cart.jpg.png" />
+
+           <img   style = "margin-right:52px; width:26px;"class = "custom" src = "./icons/custom.jpg.png" />
+           
+        </section>
+    </header>
+
+
+
+<div class = "product-section">
+ <div class = "product-container">
+    <div class = "sub-product"> 
+          <div  class = "product-image-container "> 
+            <img class = "product-image" src= "./icons/top product8.png" width = "150px" height = "150px" />
+        </div >
+            <div>           
+                <h1 >JBL Live 660NC Wireless Over-Ear NC Headphones</h1> 
+                <p >9,999<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹14,999</del></span></p> 
+             <div class = "signs">
+                <!-- <button class = "minus-button">-</button>
+                <button class = "count-button">1</button>
+                <button class = "plus-button">+</button> --> 
+                  <div class = "minus-container">
+                    <P class = "signs-paragraph"style = "padding-right:28px; ">-</P> 
+                  </div> 
+                   <div class = "count-container"> 
+                    <p class = "signs-paragraph">1</p>
+                  </div>  
+
+                  <div class = "plus-container">
+                  <p class = "signs-paragraph">+</p> 
+                 </div> 
+            </div>
+
+           
+
+            <div  class = "trash-container">
+                <i class="fa-solid fa-trash"></i>
+            </div> 
+             
+            
+    </div>
+    </div>
+   
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" >  
+<div class = "sub-product"> 
+    <div  class = "product-image-container "> 
+      <img class = "product-image" src= "./icons/top product5.png" width = "150px" height = "150px" />
+  </div >
+      <div>           
+          <h1>boAt Rockerz 518 On-Ear Wireless Headphones</h1> 
+          <p >1,299<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹3,990</del></span></p> 
+       <div class = "signs">
+          <!-- <button class = "minus-button">-</button>
+          <button class = "count-button">1</button>
+          <button class = "plus-button">+</button> --> 
+            <div class = "minus-container">
+              <P>-</P>
+            </div> 
+             <div class = "count-container"> 
+              <p>1</p>
+            </div>  
+
+            <div class = "plus-container">
+            <p>+</p>
+           </div> 
+      </div>
+
+
+     
+
+      <div  class = "trash-container"  >
+          <i class="fa-solid fa-trash"></i>
+      </div> 
+       
+      
+</div>
+</div>
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" >  
+<div class = "sub-product"> 
+    <div  class = "product-image-container "> 
+      <img class = "product-image" src= "./icons/top product2.png" width = "150px" height = "150px" />
+  </div >
+      <div>           
+          <h1>boAt Airdopes 131 Wireless In-Ear</h1> 
+          <p >1,099<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹2,990</del></span></p> 
+       <div class = "signs">
+          <!-- <button class = "minus-button">-</button>
+          <button class = "count-button">1</button>
+          <button class = "plus-button">+</button> --> 
+            <div class = "minus-container">
+              <P>-</P>
+            </div> 
+             <div class = "count-container"> 
+              <p>1</p>
+            </div>  
+
+            <div class = "plus-container">
+            <p>+</p>
+           </div> 
+      </div>
+
+     
+
+      <div  class = "trash-container"  >
+          <i class="fa-solid fa-trash"></i>
+      </div> 
+       
+      
+</div>
+</div>
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" >  
+<div class = "sub-product"> 
+    <div  class = "product-image-container "> 
+      <img class = "product-image" src= "./icons/top product6.png" width = "150px" height = "150px" />
+  </div >
+      <div>           
+          <h1 >JBL Wave 100 Wireless In-Ear</h1> 
+          <p >2,999<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹6,999</del></span></p> 
+       <div class = "signs">
+          <!-- <button class = "minus-button">-</button>
+          <button class = "count-button">1</button>
+          <button class = "plus-button">+</button> --> 
+            <div class = "minus-container">
+              <P>-</P>
+            </div> 
+             <div class = "count-container"> 
+              <p>1</p>
+            </div>  
+
+            <div class = "plus-container">
+            <p>+</p>
+           </div> 
+      </div>
+
+     
+
+      <div  class = "trash-container"  >
+          <i class="fa-solid fa-trash"></i>
+      </div> 
+       
+      
+</div>
+</div>
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" >  
+<div class = "sub-product"> 
+    <div  class = "product-image-container "> 
+      <img class = "product-image" src= "./icons/top product8.png" width = "150px" height = "150px" />
+  </div >
+      <div>           
+          <h1>Sony WF-1000XM4 In-Ear</h1> 
+          <p >19,990<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹24,990</del></span></p> 
+       <div class = "signs">
+          <!-- <button class = "minus-button">-</button>
+          <button class = "count-button">1</button>
+          <button class = "plus-button">+</button> --> 
+            <div class = "minus-container">
+              <P>-</P>
+            </div> 
+             <div class = "count-container"> 
+              <p>1</p>
+            </div>  
+
+            <div class = "plus-container">
+            <p>+</p>
+           </div> 
+      </div>
+
+     
+
+      <div  class = "trash-container"  >
+          <i class="fa-solid fa-trash"></i>
+      </div> 
+       
+      
+</div>
+</div>
+</div>
+<div class = "products">
+    <h1 style = "font-size:40px;color:rgb(112, 109, 109); margin-left:63px;">Order Summary (4 items)</h1> 
+    <div class = "product-section-2">    
+        <div type = "none" style  = "color:rgb(112, 109, 109)"> 
+            <ul style = "font-size:22px;">Original price</P></ul>
+            <ul style = "font-size:22px;">Discount</ul> 
+            <ul style = "font-size:22px;">Delivery</ul>
+        </div> 
+        <div type = "none">
+            <ul style = "color:whitesmoke; font-size:22px;">₹22,978</ul>
+            <ul style = "color:green; font-size:22px;">-₹10,132</ul>
+            <ul style = "color:green; font-size:22px;">Free</ul>
+        </div>  
+
+    </div>
+    <hr  style = " border-radius:5px solid grey;"> 
+    <div class = "total-price">
+        <h1  style = "padding-top:24px; font-size:28px;color:rgb(112, 109, 109); margin-right:22px;">Total Price</h1> 
+        <p style = "margin-left:28px; font-size:32px;">₹12,846</p>
+    </div>
+    <button class = "price-button">Checkout</button>
+</div>
+
+     
+
+</div>
+
+ </div>
+
+
+
+
+    <!-- <hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" >  -->
+         
+    <!-- <div class = "sub-product">
+        <div  class = "product-image-container "> 
+          <img class = "product-image" src= "./icons/top product2.png"  width = "150px" height = "150px"/>
+          </div>
+          <div>
+              <h1 style = " margin-left:12px; color:rgb(133, 132, 131); font-size:32px;" >boAt Airdopes 131 Wireless In-Ear</h1> 
+
+              
+              <p style = "font-size:34px; margin-left:12PX;color:rgb(188, 180, 180); font-weight:600;">9,999<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹14,999</del></span></p>
+           <div class = "signs">
+            <div class = "minus-container">
+                <P>-</P>
+              </div> 
+               <div class = "count-container"> 
+                <p>1</p>
+              </div>  
+
+              <div class = "plus-container">
+              <p>+</p>
+             </div> 
+
+           </div>
+    
+          <div class = "trash-container "style = "background-color: rgb(158, 176, 176);" >
+            <i class="fa-solid fa-trash"></i>
+          </div> 
+    </div>
+</div> 
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" > 
+<div class = "sub-product">
+    <div  class = "product-image-container "> 
+      <img  class = "product-image"src= "./icons/top product10.png"  width = "150px" height = "150px"/>
+      </div>
+      <div>
+          <h1 style = " margin-left:12px; color:rgb(133, 132, 131); font-size:32px;" >Sony WF-1000XM4</h1> 
+
+          <p style = "font-size:34px; margin-left:12PX;color:rgb(188, 180, 180); font-weight:600;">19,990<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹24,990</del></span></p>
+      
+       <div class = "signs">
+        <div class = "minus-container">
+            <P>-</P>
+          </div> 
+           <div class = "count-container"> 
+            <p>1</p>
+          </div>  
+
+          <div class = "plus-container">
+          <p>+</p>
+         </div> 
+
+       </div>
+
+      <div class = "trash-container "style = "background-color: rgb(158, 176, 176);" >
+        <i class="fa-solid fa-trash"></i>
+      </div> 
+</div>
+</div>  
+<hr  style = " border-radius:1px  grey; border:1px solid rgb(167, 166, 166); width:100%;" > 
+<div class = "sub-product">
+    <div  class = "product-image-container "> 
+      <img  class = "product-image" src= "./icons/top product11.png"  width = "150px" height = "150px"/>
+      </div>
+      <div>
+          <h1 style = " margin-left:12px; color:rgb(133, 132, 131); font-size:32px;" >Sony WH-XB910N</h1> 
+
+          <p style = "font-size:34px; margin-left:12PX;color:rgb(188, 180, 180); font-weight:600;">13,489<span style = "color:rgb(109, 109, 106) ; margin-left:12px; font-weight:600;"><del>₹19,990</del></span></p>
+      
+       <div class = "signs">
+        <div class = "minus-container">
+            <P>-</P>
+          </div> 
+           <div class = "count-container"> 
+            <p>1</p>
+          </div>  
+
+          <div class = "plus-container">
+          <p>+</p>
+         </div> 
+
+       </div>
+
+      <div class = "trash-container "style = "background-color: rgb(158, 176, 176);" >
+        <i class="fa-solid fa-trash"></i>
+      </div> 
+</div>
+</div>  
+</div>
+
+<div class = "products">
+        <h1 style = "font-size:40px;color:rgb(112, 109, 109); margin-left:63px;">Order Summary (4 items)</h1> 
+        <div class = "product-section-2">    
+            <div type = "none" style  = "color:rgb(112, 109, 109)"> 
+                <ul style = "font-size:22px;">Original price</P></ul>
+                <ul style = "font-size:22px;">Discount</ul> 
+                <ul style = "font-size:22px;">Delivery</ul>
+            </div> 
+            <div type = "none">
+                <ul style = "color:whitesmoke; font-size:22px;">₹22,978</ul>
+                <ul style = "color:green; font-size:22px;">-₹10,132</ul>
+                <ul style = "color:green; font-size:22px;">Free</ul>
+            </div>  
+
+        </div>
+        <hr  style = " border-radius:5px solid grey;"> 
+        <div class = "total-price">
+            <h1  style = "padding-top:24px; font-size:28px;color:rgb(112, 109, 109); margin-right:22px;">Total Price</h1> 
+            <p style = "margin-left:28px; font-size:32px;">₹12,846</p>
+        </div>
+        <button class = "price-button">Checkout</button>
+    </div>
+
+         
+
+</div>
+</div> -->
+
+    <footer>
+        <section class = "footer-section-1">
+                <h1 >Tech-Shop</h1> 
+                <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p> 
+                <input type ="email" placeholder=" Email Address*"  style = "width:240px; height:30px; background-color:black; border:2px solid bisque;"  /> <br>
+                <button class = "button">Subscribe</button>
+             </section>
+             <section class = "footer-section-2"> 
+                 <h1 style = "padding-left:34px;">Help</H1>
+                 <ul type = "none">
+                    <li>FAQs</li>
+                    <li>Track Order</li>
+                    <li>Cancel Order</li> 
+                    <li>Return Order</li> 
+                    <li>Warranty Info</li> 
+                 </ul>
+             </section>
+             <section class = "footer-section-3">
+                 <h1 style = "padding-left:34px;">Policies</H1>
+                     <ul type = "none">
+                        <li>Return Policy</li>
+                        <li>Security</li>
+                        <li>Sitemap</li> 
+                        <li>Privacy Policy</li> 
+                        <li>Terms & Conditions</li> 
+                     </ul>
+             </section> 
+             <section class = "footer-section-4">
+                 <h1 style = "padding-left:34px;">Company</H1>
+                     <ul type = "none" >
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Service Centers</li> 
+                        <li>Careers</li> 
+                        <li>Affiliates</li> 
+                     </ul>
+                 </section> 
+             
+             </footer>
+           
+         </br>  
+           <div class = "icon-display">
+             <div class = "horizontal-tag">
+                <p>2024|All Rights Reserved.Built by| <span style = "color:gold;">Ravi Sanjeev</span></p> 
+     
+             </div>   
+             <div class = "icons">
+                 <i class="fa-brands fa-facebook-f"></i>  
+                 <i class="fa-brands fa-twitter"></i> 
+                 <i class="fa-brands fa-instagram"></i> 
+                 <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              </div> 
+             
+
+     
+        
+</body>
+</html>
